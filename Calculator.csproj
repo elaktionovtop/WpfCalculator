@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="pictures\add.png" />
+    <None Remove="pictures\clear.png" />
+    <None Remove="pictures\divide.png" />
+    <None Remove="pictures\multiply.png" />
+    <None Remove="pictures\next.png" />
+    <None Remove="pictures\subtract.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="pictures\add.png" />
+    <Resource Include="pictures\clear.png" />
+    <Resource Include="pictures\divide.png" />
+    <Resource Include="pictures\multiply.png" />
+    <Resource Include="pictures\next.png" />
+    <Resource Include="pictures\subtract.png" />
+  </ItemGroup>
+
 </Project>
