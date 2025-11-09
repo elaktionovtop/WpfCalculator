@@ -34,6 +34,7 @@
             <Setter Property="Background" Value="#4A6FA5"/>
             <Setter Property="BorderBrush" Value="#2E4C78"/>
             <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Opacity" Value="1"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -69,6 +70,10 @@
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="#355B89"/>
                 </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5"/>
+                    <Setter Property="Cursor" Value="Arrow"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
 
@@ -99,22 +104,22 @@
         </Grid>
 
         <UniformGrid Grid.Column="1" Rows="3" Columns="2">
-            <Button x:Name="add" Click="Oper">
+            <Button Command="{Binding AddCommand}">
                 <Image Source="pack://application:,,,/pictures/add.png" Stretch="Fill" />
             </Button>
-            <Button x:Name="sub" Click="Oper">
+            <Button Command="{Binding SubCommand}">
                 <Image Source="pack://application:,,,/pictures/subtract.png" Stretch="Fill" />
             </Button>
-            <Button x:Name="mul" Click="Oper">
+            <Button Command="{Binding MulCommand}">
                 <Image Source="pack://application:,,,/pictures/multiply.png" Stretch="Fill" />
             </Button>
-            <Button x:Name="div" Click="Oper">
+            <Button Command="{Binding DivCommand}">
                 <Image Source="pack://application:,,,/pictures/divide.png" Stretch="Fill" />
             </Button>
-            <Button x:Name="next" Click="CopyResult">
+            <Button Command="{Binding NextCommand}">
                 <Image Source="pack://application:,,,/pictures/next.png" Stretch="Fill" />
             </Button>
-            <Button x:Name="clear" Click="Clear">
+            <Button Command="{Binding ClearCommand}">
                 <Image Source="pack://application:,,,/pictures/clear.png" Stretch="Fill" />
             </Button>
         </UniformGrid>
